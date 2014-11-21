@@ -61,8 +61,8 @@
       <file leaf-file-name="contacto.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/pages/contacto.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="595">
-              <caret line="6" column="69" selection-start-line="6" selection-start-column="69" selection-end-line="6" selection-end-column="69" />
+            <state vertical-scroll-proportion="-8.115385" vertical-offset="61" max-vertical-offset="595">
+              <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
               <folding>
                 <element signature="n#style#0;n#ons-row#1;n#ons-page#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#ons-col#0;n#ons-row#1;n#ons-page#0;n#!!top" expanded="true" />
@@ -74,8 +74,8 @@
       <file leaf-file-name="contact.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controllers/contact.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24862888" vertical-offset="0" max-vertical-offset="884">
-              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.5959781" vertical-offset="337" max-vertical-offset="884">
+              <caret line="39" column="134" selection-start-line="39" selection-start-column="134" selection-end-line="39" selection-end-column="134" />
               <folding />
             </state>
           </provider>
@@ -143,10 +143,10 @@
         <option value="$PROJECT_DIR$/js/controllers/main.js" />
         <option value="$PROJECT_DIR$/templates/pages/sideMenu.html" />
         <option value="$PROJECT_DIR$/js/app.js" />
-        <option value="$PROJECT_DIR$/templates/pages/contacto.html" />
         <option value="$PROJECT_DIR$/templates/TabBarBottom.html" />
         <option value="$PROJECT_DIR$/styles/app.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/templates/pages/contacto.html" />
         <option value="$PROJECT_DIR$/js/controllers/contact.js" />
       </list>
     </option>
@@ -347,7 +347,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20703125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -460,17 +460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pages/contacto.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="595">
-          <caret line="6" column="69" selection-start-line="6" selection-start-column="69" selection-end-line="6" selection-end-column="69" />
-          <folding>
-            <element signature="n#style#0;n#ons-row#1;n#ons-page#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#ons-col#0;n#ons-row#1;n#ons-page#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/TabBarBottom.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.3012047" vertical-offset="0" max-vertical-offset="629">
@@ -495,10 +484,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pages/contacto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.115385" vertical-offset="61" max-vertical-offset="595">
+          <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
+          <folding>
+            <element signature="n#style#0;n#ons-row#1;n#ons-page#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#ons-col#0;n#ons-row#1;n#ons-page#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers/contact.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24862888" vertical-offset="0" max-vertical-offset="884">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.5959781" vertical-offset="337" max-vertical-offset="884">
+          <caret line="39" column="134" selection-start-line="39" selection-start-column="134" selection-end-line="39" selection-end-column="134" />
           <folding />
         </state>
       </provider>

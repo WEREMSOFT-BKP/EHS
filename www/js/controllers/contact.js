@@ -37,7 +37,7 @@
             );
         }
         $scope.emailContacto = function () {
-            var link = "mailto:info@nakaoutdoors.com.ar" + "?subject=" + escape("Consulta") + "&body=" + escape("Estimados Naka Outdoors:\n");
+            var link = "mailto:contratistas@ehslatam.com" + "?subject=" + escape("Consulta") + "&body=" + escape("Estimado equipo de soporte:\n");
             window.open(link, 'silentFrame');
         }
 
