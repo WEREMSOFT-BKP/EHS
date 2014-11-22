@@ -38,7 +38,15 @@
         }
         $scope.emailContacto = function () {
             var link = "mailto:contratistas@ehslatam.com" + "?subject=" + escape("Consulta") + "&body=" + escape("Estimado equipo de soporte:\n");
-            window.open(link, 'silentFrame');
+            window.plugin.email.open({
+                to:          ['contratistas@ehslatam.com'], // email addresses for TO field
+                cc:          [], // email addresses for CC field
+                bcc:         [], // email addresses for BCC field
+                attachments: [], // paths to the files you want to attach or base64 encoded data streams
+                subject:    "Solicitud de soporte", // subject of the email
+                body:       "Estimado equipo de soporte:<br>", // email body (could be HTML code, in this case set isHtml to true)
+                isHtml:    true, // indicats if the body is HTML or plain text
+            });
         }
 
 
