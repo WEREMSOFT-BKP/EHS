@@ -6,7 +6,6 @@
 
         $scope.askCallSoporte = function (cod_sucursal) {
             try {
-                alert(navigator.notification);
                 navigator.notification.confirm(
                     '¿Desea llamar a la sucursal?', // message
                     $scope.onConfirm, // callback to invoke with index of button pressed
