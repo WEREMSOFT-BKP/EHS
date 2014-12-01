@@ -13,17 +13,6 @@
         $scope.searchResult = [];
         $scope.searchType = '';
 
-        $scope.init = function() {
-            if ($scope.userData.logedIn) {
-                if ($scope.menu._currentPageUrl != 'templates/TabBarBottom.html') {
-                    $scope.menu.setMainPage('templates/TabBarBottom.html');
-                }
-            } else {
-                console.log('NO logeado');
-                $scope.menu.setMainPage('templates/forms/login.html');
-            }
-        };
-
         $scope.logout = function() {
                 $scope.userData.logout();
                 $scope.menu.setMainPage('templates/forms/login.html');

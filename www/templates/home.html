@@ -1,3 +1,3 @@
 <ons-navigator>
-   <div ng-include="userData.profileData.tipo == 2?'templates/forms/clienteSearch.html':'templates/forms/login.html'"></div>
+   <div ng-include="(userData.logedIn && userData.profileData.tipo == 2 )?'templates/forms/clienteSearch.html':(userData.logedIn && userData.profileData.tipo == 1 )?'templates/TabBarBottom.html':'templates/forms/login.html'"></div>
 </ons-navigator>

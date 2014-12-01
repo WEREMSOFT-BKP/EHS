@@ -10,14 +10,13 @@
         $scope.shouldAskForConfirmationBeforeLeave = false;
         $scope.loginOptions = [{name: 'Empresa', value: 1}, {name: 'Contratista', value: 2}];
 
-
         $scope.login = function() {
             $scope.userData.refreshUserDetails($scope, $scope.loginSuccess, $scope.loginError);
         };
 
         $scope.loginSuccess = function()
         {
-            $scope.menu.setMainPage('templates/forms/clienteSearch.html');
+            $scope.menu.setMainPage('templates/home.html');
         };
         $scope.loginError = function()
         {

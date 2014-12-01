@@ -2,7 +2,7 @@
     <ons-toolbar modifier="transparent"></ons-toolbar>
 
     <ons-list class="menu-list">
-        <ons-list-item ng-hide="userData.logedIn" class="menu-item" ng-click="menu.setMainPage('templates/forms/login.html', {closeMenu: true})">
+        <ons-list-item ng-hide="userData.logedIn" class="menu-item" ng-click="ons.navigator.resetToPage('templates/forms/login.html')">
             <ons-icon icon="fa-user"></ons-icon>
             Login
         </ons-list-item>
