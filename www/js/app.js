@@ -4,9 +4,12 @@
 
 
     app.factory('userData', function($http) {
+        this.isWorking = false;
         var returnValue = {
             logedIn: false,
-            profileData: {tipo: null},
+            profileData: {
+                tipo: null
+            },
             userName: null,
             password: null,
             check_password: null,
@@ -17,9 +20,7 @@
         };
         returnValue.reset = function() {
             this.logedIn = false;
-            this.profileData = null;
             window.localStorage.setItem('logedIn', false);
-            window.localStorage.setItem('profileData', null);
         }
 
         if (window.localStorage.getItem('logedIn')) {
@@ -38,13 +39,15 @@
             }
         }
 
-        returnValue.logout = function()
-        {
+        returnValue.logout = function() {
             returnValue.reset();
         }
 
         returnValue.httpSuccess = function(data, status, headers, config) {
-            returnValue.scope.isWorking = false;
+            if(returnValue.scope)
+            {
+                returnValue.scope.isWorking = false;
+            }
             console.log(data.ok);
             if (data.ok == 1) {
                 window.localStorage.setItem("user", returnValue.userName);
@@ -66,11 +69,19 @@
         }
 
         returnValue.refreshUserDetails = function(pScope, pCallBackSuccess, pCallBackError) {
+            if (pScope) {
+                pScope.isWorking = true;
+                this.scope = pScope;
+            }
+            var data = window.localStorage.getItem('profileData');
+            if(data && returnValue.logedIn)
+            {
+                returnValue.profileData = JSON.parse(window.localStorage.getItem('profileData'));
+            }
+            
             this.callBackSuccess = pCallBackSuccess;
             this.callBackError = pCallBackError;
             this.isWorking = true;
-            pScope.isWorking = true;
-            this.scope = pScope;
             var request = $http({
                 method: "get",
                 url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=login&tipo=' + this.profileData.tipo + '&usuario=' + this.userName + '&password=' + this.password,
@@ -89,6 +100,10 @@
             // Store the data-dump of the FORM scope.
             request.error(this.httpError);
 
+        }
+
+        if (returnValue.logedIn) {
+            returnValue.refreshUserDetails();
         }
 
         return returnValue;
@@ -120,6 +135,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         navigator.splashscreen.hide();
+
     }
 };
 

@@ -1,0 +1,14 @@
+<ons-list>
+    <ons-list-item ng-repeat="vehiculo in searchResult" modifier="chevron" class="list-item-container" ng-click="getDocumentacionVehiculo(vehiculo.codigo)">
+        <div class="list-item-left">
+            <ons-icon ng-show="vehiculo.estado == 0" icon="fa-times-circle" size="40px" style="color: #cc0000"></ons-icon>
+            <ons-icon ng-show="vehiculo.estado != 0" icon="fa-check-circle" size="40px" style="color: #00bb00"></ons-icon>
+        </div>
+        <div class="list-item-right">
+            <div class="list-item-content">
+                <div class="name">{{vehiculo.patente}}</div>
+                <span class="desc">{{vehiculo.contratista}}</span>
+            </div>
+        </div>
+    </ons-list-item>
+</ons-list>

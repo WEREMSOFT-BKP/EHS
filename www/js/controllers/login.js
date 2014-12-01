@@ -7,8 +7,8 @@
         $scope.userData = userData;
         $scope.isWorking = false;
         $scope.editMode = false;
-        $scope.buyOptions = {};
         $scope.shouldAskForConfirmationBeforeLeave = false;
+        $scope.loginOptions = [{name: 'Empresa', value: 1}, {name: 'Contratista', value: 2}];
 
 
         $scope.login = function() {
@@ -17,7 +17,7 @@
 
         $scope.loginSuccess = function()
         {
-            $scope.menu.setMainPage('templates/home.html');
+            $scope.menu.setMainPage('templates/forms/clienteSearch.html');
         };
         $scope.loginError = function()
         {
