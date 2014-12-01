@@ -63,7 +63,7 @@ function goBackOnePage() {
 
 if (raiseDebugErrors) {
     console.logError = console.error;
-    //console.error = promptError;
+    console.error = promptError;
 }
 var deviceType = (navigator.userAgent.match(/iPad/i)) == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i)) == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "browser";
 var gcmProductID = null;
