@@ -133,7 +133,9 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         deviceReadyWasFired = true;
+        alert('onDeviceReady!!');
         navigator.splashscreen.hide();
+        alert('haciendo un hide del splashscreen!!');
     }
 };
 
