@@ -44,8 +44,7 @@
         }
 
         returnValue.httpSuccess = function(data, status, headers, config) {
-            if(returnValue.scope)
-            {
+            if (returnValue.scope) {
                 returnValue.scope.isWorking = false;
             }
             console.log(data.ok);
@@ -74,11 +73,10 @@
                 this.scope = pScope;
             }
             var data = window.localStorage.getItem('profileData');
-            if(data && returnValue.logedIn)
-            {
+            if (data && returnValue.logedIn) {
                 returnValue.profileData = JSON.parse(window.localStorage.getItem('profileData'));
             }
-            
+
             this.callBackSuccess = pCallBackSuccess;
             this.callBackError = pCallBackError;
             this.isWorking = true;
@@ -123,7 +121,7 @@
 
 })();
 
-
+var deviceReadyWasFired = false;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -134,9 +132,17 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+        deviceReadyWasFired = true;
         navigator.splashscreen.hide();
-
     }
 };
 
 app.initialize();
+
+window.setTimeout(function() {
+    if (!deviceReadyWasFired) {
+        var e = document.createEvent('Events');
+        e.initEvent("deviceready");
+        document.dispatchEvent(e);
+    }
+}, 3000);
