@@ -10,7 +10,7 @@
 
     <preference name="android-targetSdkVersion" value="15" />
     <preference name="permissions" value="none" />
-    <preference name="phonegap-version" value="3.6.3" />
+    <preference name="phonegap-version" value="2.9.0" />
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="true" />
