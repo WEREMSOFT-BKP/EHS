@@ -143,8 +143,11 @@ app.initialize();
 
 window.setTimeout(function() {
     if (!deviceReadyWasFired) {
+        alert('calloing deviceready');
         var e = document.createEvent('Events');
         e.initEvent("deviceready");
         document.dispatchEvent(e);
     }
 }, 3000);
+
+alert('test');
