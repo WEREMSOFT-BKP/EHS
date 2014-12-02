@@ -8,7 +8,7 @@
         PhoneGap Team
     </author>
 
-    <preference name="android-targetSdkVersion" value="16" />
+    <preference name="android-targetSdkVersion" value="15" />
     <preference name="permissions" value="none" />
     <preference name="phonegap-version" value="3.6.3" />
     <preference name="orientation" value="portrait" />
