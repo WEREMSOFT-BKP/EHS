@@ -133,9 +133,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         deviceReadyWasFired = true;
-        alert('onDeviceReady!!');
         navigator.splashscreen.hide();
-        alert('haciendo un hide del splashscreen!!');
     }
 };
 
@@ -143,11 +141,9 @@ app.initialize();
 
 window.setTimeout(function() {
     if (!deviceReadyWasFired) {
-        alert('calloing deviceready');
         var e = document.createEvent('Events');
         e.initEvent("deviceready");
         document.dispatchEvent(e);
     }
 }, 3000);
 
-alert('test');
