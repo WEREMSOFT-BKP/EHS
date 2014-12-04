@@ -1,8 +1,10 @@
 <ons-toolbar>
     <div class="left">
-        <ons-toolbar-button ng-click="menu.toggle()">
+        <ons-toolbar-button ng-click="menu.toggle()" ng-show="ons.navigator.getPages().length <= 1">
             <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
         </ons-toolbar-button>
+        <ons-back-button ng-hide="ons.navigator.getPages().length <= 1">
+        </ons-back-button>
     </div>
     <div class="center">
         <img width="30px" height="36px" class="logo-image" src="imgs/header_logo.png">
