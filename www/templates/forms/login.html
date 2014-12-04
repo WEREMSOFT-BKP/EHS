@@ -5,19 +5,19 @@
             <ons-row style="margin-top: 20px;">
                 <ons-col>
                     <label>Usuario o e-mail:</label>
-                    <input type="text" ng-model="userData.userName" class="text-input--underbar" placeholder="Usuario o e-mail" value="">
+                    <input type="text" ng-model="userData.userName" class="text-input" placeholder="Usuario o e-mail" value="">
                 </ons-col>
             </ons-row>
             <ons-row style="margin-top: 0px;">
                 <ons-col>
                     <label>Password:</label>
-                    <input type="password" ng-model="userData.password" class="text-input--underbar" placeholder="Password" value="">
+                    <input type="password" ng-model="userData.password" class="text-input" placeholder="Password" value="">
                 </ons-col>
             </ons-row>
             <ons-row style="margin-top: 0px;">
                 <ons-col>
                     <label>Tipo:</label>
-                    <select class="select-combo" ng-model="userData.profileData.tipo">
+                    <select class="select-combo" class="text-input" ng-model="userData.profileData.tipo">
                         <option value="">-- Tipo de Usuario --</option>
                         <option value="1">Empresa</option>
                         <option value="2">Contratista</option>
