@@ -13,6 +13,7 @@
         $scope.searchResult = [];
         $scope.searchType = '';
 
+
         $scope.logout = function() {
                 $scope.userData.logout();
                 $scope.menu.setMainPage('templates/forms/login.html');
@@ -178,6 +179,12 @@
             $scope.loading = false;
             $scope.connectionFail = true;
         };
+
+        $scope.testCall = function(pObject)
+        {
+            console.log('cadorna');
+            console.log(pObject);
+        }
 
     });
 

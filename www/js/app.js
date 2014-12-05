@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    var app = angular.module('app', ['onsen', 'Login', 'Main', 'Contact']);
+    var app = angular.module('app', ['onsen', 'Login', 'Main', 'Contact', 'buttonCombo']);
 
 
     app.factory('userData', function($http) {
@@ -107,12 +107,30 @@
         return returnValue;
     });
 
+    app.factory('buttonCombo', function($http) {
+        var returnValue = {
+            currentComboOptions: [],
+            currentComboSelection: {}
+        };
+        return returnValue;
+    });
 
 
     app.directive('moduleHeader', function() {
         return {
             restrict: 'E',
             templateUrl: 'templates/modules/header.html'
+        };
+    });
+
+    app.directive('comboButton', function($compile) {
+        return {
+            restrict: 'E',
+            templateUrl: 'templates/modules/comboButton/comboButton.html',
+            link: function($scope, $element, $attrs)
+            {
+                $scope.label = $attrs.label;
+            }
         };
     });
 
@@ -146,4 +164,3 @@ window.setTimeout(function() {
         document.dispatchEvent(e);
     }
 }, 3000);
-

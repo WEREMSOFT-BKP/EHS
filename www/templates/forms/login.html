@@ -1,4 +1,4 @@
-<ons-page ng-controller="LoginController">
+<ons-page ng-controller="LoginController" ng-init="init()">
     <module-header></module-header>
     <div class="content-padded">
         <form ng-submit="login">
@@ -17,6 +17,9 @@
             <ons-row style="margin-top: 0px;">
                 <ons-col>
                     <label>Tipo:</label>
+
+                   <combo-button label="{{selectedLoginOptionLabel}}"></combo-button> 
+
                     <select class="select-combo" class="text-input" ng-model="userData.profileData.tipo">
                         <option value="">-- Tipo de Usuario --</option>
                         <option value="1">Empresa</option>

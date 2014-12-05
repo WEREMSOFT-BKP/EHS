@@ -1,0 +1,31 @@
+<ons-page ng-controller="comboController">
+    <ons-toolbar>
+        <div class="center">Seleccione una opción</div>
+    </ons-toolbar>
+
+    <ons-list>
+
+        <ons-list-header>Seleccione una Opción </ons-list-header>
+
+        <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="option in buttonCombo.currentComboOptions" ng-click="clickSelect(option)">
+            <div class="list-item-left">
+                <ons-icon ng-show="buttonCombo.currentComboSelection.value === option.value"  icon="fa-check-circle" size="20px" style="color: #00bb00"></ons-icon>
+            </div>
+            <div class="list-item-right">
+                <div class="list-item-content">
+                    <div class="name">{{option.name}}
+                    </div>
+                </div>
+            </div>
+        </ons-list-item>
+
+        <ons-list-item modifier="tappable" ng-repeat="option in buttonCombo.currentComboOptions" ng-click="clickSelect(option)">
+            <label class="radio-button radio-button--list-item">
+                <div ng-show="buttonCombo.currentComboSelection.value === option.value">*</div>
+                <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+                {{option.name}} - {{buttonCombo.currentComboSelection.value === option.value?'checked':''}}
+            </label>
+        </ons-list-item>
+        <ons-button modifier="large" ng-click="ons.navigator.popPage()">Cancelar</ons-button>
+    </ons-list>
+</ons-page>
