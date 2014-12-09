@@ -17,14 +17,7 @@
             <ons-row style="margin-top: 0px;">
                 <ons-col>
                     <label>Tipo:</label>
-
-                   <combo-button label="{{selectedLoginOptionLabel}}"></combo-button> 
-
-                    <select class="select-combo" class="text-input" ng-model="userData.profileData.tipo">
-                        <option value="">-- Tipo de Usuario --</option>
-                        <option value="1">Empresa</option>
-                        <option value="2">Contratista</option>
-                    </select>
+                    <div style="width:100%" dropdown-menu="loginOptions"  dropdown-model="selectedLoginOption" dropdown-onchange="selectCallback(selected)"><ons-button modifier="outline" style="width:100%; text-align:center">{{selectedLoginOption.text}}&nbsp;&nbsp;&nbsp;<ons-icon icon="fa-caret-down"></ons-icon></ons-button></div>
                 </ons-col>
             </ons-row>
             <ons-row style="margin-top: 20px;">

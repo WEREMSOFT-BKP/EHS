@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    var app = angular.module('app', ['onsen', 'Login', 'Main', 'Contact', 'buttonCombo']);
+    var app = angular.module('app', ['onsen', 'Login', 'Main', 'Contact', 'buttonCombo', 'ngDropdowns']);
 
 
     app.factory('userData', function($http) {

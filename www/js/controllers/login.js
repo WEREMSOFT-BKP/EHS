@@ -9,19 +9,31 @@
         $scope.isWorking = false;
         $scope.editMode = false;
         $scope.shouldAskForConfirmationBeforeLeave = false;
-        $scope.selectedLoginOptionLabel = '';
+        $scope.selectedLoginOption = {};
         $scope.loginOptions = [{
-            name: 'Empresa',
+            text: '--Seleccione una opción--',
+            value: 0
+        },{
+            text: 'Empresa',
             value: 1
         }, {
-            name: 'Contratista',
+            text: 'Contratista',
             value: 2
         }];
 
         $scope.init = function() {
-            $scope.buttonCombo.currentComboOptions = $scope.loginOptions;
             $scope.buttonCombo.callBack = $scope.selectCallback;
             console.log($scope.buttonCombo.currentComboOptions);
+
+            if($scope.userData.profileData.tipo)
+            {
+                $scope.selectedLoginOption =  $scope.loginOptions[$scope.userData.profileData.tipo];
+            }else
+            {
+                $scope.selectedLoginOption =  $scope.loginOptions[0];
+            }
+
+
         }
 
         $scope.login = function() {
@@ -39,7 +51,6 @@
             $scope.userData.logout();
         };
         $scope.selectCallback = function(pObject) {
-            $scope.selectedLoginOptionLabel = pObject.name;
             $scope.userData.profileData.tipo = pObject.value;
             console.log(pObject);
         }
