@@ -14,6 +14,20 @@
         $scope.searchType = '';
 
 
+        $scope.init = function()
+        {
+            if(userData.logedIn && userData.profileData.tipo == 2)
+            {
+                $scope.menu.setMainPage('templates/TabBarBottom.html');
+            }else if(userData.logedIn && userData.profileData.tipo == 1)
+            {
+                $scope.menu.setMainPage('templates/forms/clienteSearch.html');
+            }else
+            {
+                 $scope.menu.setMainPage('templates/forms/login.html');
+            }
+        }
+
         $scope.logout = function() {
                 $scope.userData.logout();
                 $scope.menu.setMainPage('templates/forms/login.html');
