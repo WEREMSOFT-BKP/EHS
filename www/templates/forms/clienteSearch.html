@@ -1,44 +1,46 @@
-<ons-page>
-    <module-header></module-header>
-    <div class="content-padded">
-        <ons-row style="margin-top: 20px; border-color: #cccccc; border-top: 1px">
-            <ons-col>
-                <label>Busqueda de Contratista</label>
-                <form ng-submit="search('contratistas', stringSearchContratista)">
-                    <input type="text" class="text-input" ng-model="stringSearchContratista" placeholder="Razón Social / CUIT" value="">
-                </form>
-            </ons-col>
-        </ons-row>
-        <ons-row style="margin-top: 0px;">
-            <ons-col>
-                <ons-button modifier="large" should-spin="{{isWorking}}" ng-click="search('contratistas', stringSearchContratista)">Buscar</ons-button>
-            </ons-col>
-        </ons-row>
-        <ons-row style="margin-top: 20px; border-top: 1px solid #D3D3D3; padding-top : 10px">
-            <ons-col>
-                <label>Busqueda de Personal</label>
-                <form ng-submit="search('empleados', stringSearchPersonal)">
-                    <input type="text" class="text-input"  ng-model="stringSearchPersonal" placeholder="Nombre / Apellido / DNI" value="">
-                </form>
-            </ons-col>
-        </ons-row>
-        <ons-row style="margin-top: 0px;">
-            <ons-col>
-                <ons-button modifier="large" should-spin="{{isWorking}}" ng-click="search('empleados', stringSearchPersonal)">Buscar</ons-button>
-            </ons-col>
-        </ons-row>
-        <ons-row style="margin-top: 20px;border-top: 1px solid #D3D3D3; padding-top : 10px">
-            <ons-col>
-                <label>Busqueda de Vehículos</label>
-                <form ng-submit="search('vehiculos', stringSearchVehiculos)">
-                    <input type="text" class="text-input"  ng-model="stringSearchVehiculos" placeholder="Dominio / Patente" value="">
-                </form>
-            </ons-col>
-        </ons-row>
-        <ons-row style="margin-top: 0px;">
-            <ons-col>
-                <ons-button modifier="large" should-spin="{{isWorking}}" ng-click="search('vehiculos', stringSearchVehiculos)">Buscar</ons-button>
-            </ons-col>
-        </ons-row>
-    </div>
-</ons-page>
+<ons-navigator>
+    <ons-page>
+        <module-header></module-header>
+        <div class="content-padded">
+            <ons-row style="margin-top: 20px; border-color: #cccccc; border-top: 1px">
+                <ons-col>
+                    <label>Busqueda de Contratista</label>
+                    <form ng-submit="search('contratistas', stringSearchContratista)">
+                        <input type="text" class="text-input" ng-model="stringSearchContratista" placeholder="Razón Social / CUIT" value="">
+                    </form>
+                </ons-col>
+            </ons-row>
+            <ons-row style="margin-top: 0px;">
+                <ons-col>
+                    <ons-button modifier="large" should-spin="{{isWorking}}" ng-click="search('contratistas', stringSearchContratista)">Buscar</ons-button>
+                </ons-col>
+            </ons-row>
+            <ons-row style="margin-top: 20px; border-top: 1px solid #D3D3D3; padding-top : 10px">
+                <ons-col>
+                    <label>Busqueda de Personal</label>
+                    <form ng-submit="search('empleados', stringSearchPersonal)">
+                        <input type="text" class="text-input" ng-model="stringSearchPersonal" placeholder="Nombre / Apellido / DNI" value="">
+                    </form>
+                </ons-col>
+            </ons-row>
+            <ons-row style="margin-top: 0px;">
+                <ons-col>
+                    <ons-button modifier="large" should-spin="{{isWorking}}" ng-click="search('empleados', stringSearchPersonal)">Buscar</ons-button>
+                </ons-col>
+            </ons-row>
+            <ons-row style="margin-top: 20px;border-top: 1px solid #D3D3D3; padding-top : 10px">
+                <ons-col>
+                    <label>Busqueda de Vehículos</label>
+                    <form ng-submit="search('vehiculos', stringSearchVehiculos)">
+                        <input type="text" class="text-input" ng-model="stringSearchVehiculos" placeholder="Dominio / Patente" value="">
+                    </form>
+                </ons-col>
+            </ons-row>
+            <ons-row style="margin-top: 0px;">
+                <ons-col>
+                    <ons-button modifier="large" should-spin="{{isWorking}}" ng-click="search('vehiculos', stringSearchVehiculos)">Buscar</ons-button>
+                </ons-col>
+            </ons-row>
+        </div>
+    </ons-page>
+</ons-navigator>
