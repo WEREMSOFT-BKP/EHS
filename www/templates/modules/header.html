@@ -1,12 +1,9 @@
 <ons-toolbar>
     <div class="left">
-        <ons-toolbar-button ng-click="menu.toggle()" ng-show="ons.navigator.getPages().length <= 1">
-            <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-        </ons-toolbar-button>
-        <ons-back-button ng-hide="ons.navigator.getPages().length <= 1">
-        </ons-back-button>
+        <img height="40px" style="padding-left:20px; padding-top:3px; padding-bottom: 5px" class="logo-image" src="imgs/header_logo.png">
     </div>
-    <div class="center">
-        <img width="30px" height="36px" class="logo-image" src="imgs/header_logo.png">
+    <div class="right" style="text-align:left; padding:5px">
+        <b>Control de contratistas</b><br>
+        <b>{{userData.profileData.nombre}}</b>
     </div>
 </ons-toolbar>

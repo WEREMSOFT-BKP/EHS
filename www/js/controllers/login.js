@@ -8,29 +8,25 @@
         $scope.buttonCombo = buttonCombo;
         $scope.isWorking = false;
         $scope.editMode = false;
-        $scope.shouldAskForConfirmationBeforeLeave = false;
         $scope.selectedLoginOption = {};
         $scope.loginOptions = [{
             text: '--Seleccione una opción--',
             value: 0
         },{
-            text: 'Empresa',
+            text: 'Contratista',
             value: 1
         }, {
-            text: 'Contratista',
+            text: 'Empresa',
             value: 2
         }];
 
         $scope.init = function() {
-            $scope.buttonCombo.callBack = $scope.selectCallback;
-            console.log($scope.buttonCombo.currentComboOptions);
-
             if($scope.userData.profileData.tipo)
             {
-                $scope.selectedLoginOption =  $scope.loginOptions[$scope.userData.profileData.tipo];
+                $scope.selectedLoginOption =  cloneObject($scope.loginOptions[$scope.userData.profileData.tipo]);
             }else
             {
-                $scope.selectedLoginOption =  $scope.loginOptions[0];
+                $scope.selectedLoginOption =  cloneObject($scope.loginOptions[0]);
             }
 
 
@@ -41,7 +37,7 @@
         };
 
         $scope.loginSuccess = function() {
-            $scope.menu.setMainPage('templates/home.html');
+            $scope.menu.setMainPage('templates/TabBarBottom.html');
         };
         $scope.loginError = function() {
             alert('No funciono!');

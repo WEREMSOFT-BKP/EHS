@@ -10,6 +10,7 @@
             profileData: {
                 tipo: null
             },
+            contratistaInfo: {}, 
             userName: null,
             password: null,
             check_password: null,
@@ -31,7 +32,7 @@
         }
 
         returnValue.httpError = function(data, status, headers, config) {
-            this.scope.isWorking = false;
+            returnValue.isWorking = false;
             promptError("Oops! Algo ha salido mal. Reintenta en un momento");
             if (returnValue.callBackError) {
                 returnValue.callBackError();

@@ -36,20 +36,13 @@
             // Store the data-dump of the FORM scope.
             request.success($scope.httpSearchSuccess);
             // Store the data-dump of the FORM scope.
-            request.error($scope.httpSearchError);
+            request.error($scope.httpError);
         }
 
         $scope.httpSearchSuccess = function(data, status, headers, config) {
             $scope.isWorking = false;
             $scope.loading = false;
             $scope.searchResult = data;
-            console.log(data);
-        };
-
-        $scope.httpSearchError = function(data, status, headers, config) {
-            $scope.isWorking = false;
-            $scope.loading = false;
-            $scope.connectionFail = true;
         };
 
         $scope.getDocumentacionVehiculo = function(pVehicleCode) {
@@ -69,7 +62,7 @@
             request.success($scope.httpDocumentacionVehiculoSuccess);
 
             // Store the data-dump of the FORM scope.
-            request.error($scope.httpDocumentacionVehiculoError);
+            request.error($scope.httpError);
         }
 
         $scope.httpDocumentacionVehiculoSuccess = function(data, status, headers, config) {
@@ -78,13 +71,6 @@
             $scope.documentacionVehiculo = data;
             console.log(data);
         };
-
-        $scope.httpDocumentacionVehiculoError = function(data, status, headers, config) {
-            $scope.isWorking = false;
-            $scope.loading = false;
-            $scope.connectionFail = true;
-        };
-
 
         $scope.getDetallesEmpleado = function(pEmpleadoCodigo) {
             $scope.loading = true;
@@ -118,7 +104,7 @@
             requestDocEmpleados.success($scope.httpDocumentacionEmpleadoSuccess);
 
             // Store the data-dump of the FORM scope.
-            requestDocEmpleados.error($scope.httpDocumentacionEmpleadoError);
+            requestDocEmpleados.error($scope.httpError);
         }
 
         $scope.httpDocumentacionEmpleadoSuccess = function(data, status, headers, config) {
@@ -128,12 +114,6 @@
             console.log(data);
         };
 
-        $scope.httpDocumentacionEmpleadoError = function(data, status, headers, config) {
-            $scope.isWorking = false;
-            $scope.loading = false;
-            $scope.connectionFail = true;
-        };
-
         $scope.httpDetallesEmpleadoSuccess = function(data, status, headers, config) {
             $scope.isWorking = false;
             $scope.loading = false;
@@ -141,15 +121,13 @@
             console.log(data);
         };
 
-        $scope.httpDetallesEmpleadoError = function(data, status, headers, config) {
-            $scope.isWorking = false;
-            $scope.loading = false;
-            $scope.connectionFail = true;
-        };
 
-        $scope.getDocumentacionContratista = function(pContratistaCode) {
+        $scope.getDocumentacionContratista = function(pContratistaCode, pDontRedirect) {
             $scope.loading = true;
-            ons.navigator.pushPage('templates/pages/listaDocumentacionContratista.html');
+            if(!pDontRedirect)
+            {
+                ons.navigator.pushPage('templates/pages/listaDocumentacionContratista.html');
+            }
             $scope.isWorking = true;
             var request = $http({
                 method: "get",
@@ -164,7 +142,7 @@
             request.success($scope.httpDocumentacionContratistaSuccess);
 
             // Store the data-dump of the FORM scope.
-            request.error($scope.httpDocumentacionContratistaError);
+            request.error($scope.httpError);
         }
 
         $scope.httpDocumentacionContratistaSuccess = function(data, status, headers, config) {
@@ -174,16 +152,124 @@
             console.log(data);
         };
 
-        $scope.httpDocumentacionContratistaError = function(data, status, headers, config) {
+
+
+
+        $scope.getEmpleados = function(pContratistaCode) {
+            //http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=571&parametro=
+            $scope.loading = true;
+            $scope.isWorking = true;
+            var request = $http({
+                method: "get",
+                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=' + pContratistaCode + '&parametro=',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                data: ''
+            });
+
+            // Store the data-dump of the FORM scope.
+            request.success($scope.httpGetEmpleadosSuccess);
+
+            // Store the data-dump of the FORM scope.
+            request.error($scope.httpError);
+        }
+
+        $scope.httpGetEmpleadosSuccess = function(data, status, headers, config) {
+            $scope.isWorking = false;
+            $scope.loading = false;
+            $scope.searchResult = data;
+            console.log(data);
+        }
+
+
+
+        $scope.getVehiculos = function(pContratistaCode) {
+            //http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=571&parametro=
+            $scope.loading = true;
+            $scope.isWorking = true;
+            var request = $http({
+                method: "get",
+                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=vehiculos&codigo=' + pContratistaCode + '&parametro=',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                data: ''
+            });
+
+            // Store the data-dump of the FORM scope.
+            request.success($scope.httpGetVehiculosSuccess);
+
+            // Store the data-dump of the FORM scope.
+            request.error($scope.httpError);
+        }
+
+        $scope.httpGetVehiculosSuccess = function(data, status, headers, config) {
+            $scope.isWorking = false;
+            $scope.loading = false;
+            $scope.searchResult = data;
+            console.log(data);
+        }
+
+        $scope.httpError = function(data, status, headers, config) {
             $scope.isWorking = false;
             $scope.loading = false;
             $scope.connectionFail = true;
         };
 
-        $scope.testCall = function(pObject)
-        {
-            console.log('cadorna');
-            console.log(pObject);
+        $scope.getDocumentosRechazados = function(pContratistaCode) {
+            //http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=571&parametro=
+            $scope.loading = true;
+            $scope.isWorking = true;
+            var request = $http({
+                method: "get",
+                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=documentosRechazados&codigo=' + pContratistaCode,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                data: ''
+            });
+
+            // Store the data-dump of the FORM scope.
+            request.success($scope.httpDocumentosRechazadosSuccess);
+
+            // Store the data-dump of the FORM scope.
+            request.error($scope.httpError);
+        }
+
+        $scope.httpDocumentosRechazadosSuccess = function(data, status, headers, config) {
+            $scope.isWorking = false;
+            $scope.loading = false;
+            $scope.searchResult = data;
+            console.log(data);
+        }
+
+        $scope.getDetallesContratista = function(pContratistaCode) {
+            //http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=571&parametro=
+            $scope.loading = true;
+            $scope.isWorking = true;
+            var request = $http({
+                method: "get",
+                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=contratistaDetalle&codigo=' + pContratistaCode,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                data: ''
+            });
+
+            // Store the data-dump of the FORM scope.
+            request.success($scope.httpDetallesContratistaSuccess);
+
+            // Store the data-dump of the FORM scope.
+            request.error($scope.httpError);
+        }
+
+        $scope.httpDetallesContratistaSuccess = function(data, status, headers, config) {
+            $scope.isWorking = false;
+            $scope.loading = false;
+            $scope.userData.contratistaInfo = data;
+            $scope.searchResult = data;
+            $scope.getDocumentacionContratista($scope.userData.profileData.codigo, true);
         }
 
     });

@@ -1,0 +1,68 @@
+<ons-navigator>
+    <ons-page class="center" ng-init="getDetallesContratista(userData.profileData.codigo)">
+        <module-header></module-header>
+        <!-- Solo se muestra si es una categoría -->
+        <div style="text-align: center" class="content-padded" ng-hide="loading">
+
+            <ons-list modifier="inset" style="margin-top: 10px">
+                <ons-list-header>{{userData.contratistaInfo.razonSocial}}</ons-list-header>
+                <ons-list-item class="list-item-container">
+                    <b>C.U.I.T. : </b>{{userData.contratistaInfo.cuit}}
+                </ons-list-item>
+
+                <ons-list-item class="list-item-container">
+                    <b>Dirección : </b>{{userData.contratistaInfo.direccion}}
+                </ons-list-item>
+
+                <ons-list-item class="list-item-container">
+                    <b>Contacto Administrativo : </b>{{userData.contratistaInfo.administrativo_contacto}}
+                </ons-list-item>
+
+                <ons-list-item class="list-item-container">
+                    <b>Teléfono de Contacto : </b>{{userData.contratistaInfo.administrativo_telefono}}
+                </ons-list-item>
+
+                <ons-list-item class="list-item-container">
+                    <b>e-mail : </b>{{userData.contratistaInfo.email}}
+                </ons-list-item>
+
+                <ons-list-item class="list-item-container">
+                    <b>Actividad : </b>{{userData.contratistaInfo.actividad}}
+                </ons-list-item>
+
+                <ons-list-item class="list-item-container">
+                    <b>Emergencia : </b>{{userData.contratistaInfo.emergencia}}
+                </ons-list-item>
+                <ons-list-item class="list-item-container">
+                    <b>A.R.T. : </b>{{userData.contratistaInfo.art}}
+                </ons-list-item>
+                <ons-list-item class="list-item-container">
+                    <b>Contrato : </b>{{userData.contratistaInfo.contrato}}
+                </ons-list-item>
+                <ons-list-item class="list-item-container">
+                    <b>subContratista : </b>{{userData.contratistaInfo.subcontratista}}
+                </ons-list-item>
+                <ons-list-header>Documentos</ons-list-header>
+                <ons-list-item ng-repeat="documento in documentacionContratista" modifier="chevron" class="list-item-container">
+                    <div class="list-item-left">
+                        <ons-icon ng-show="documento.estado == 'Vencido'" icon="fa-clock-o" size="40px" style="color: #cc0000"></ons-icon>
+                        <ons-icon ng-show="documento.estado == 'No Presento'" icon="fa-minus-circle" size="40px" style="color: #cc0000"></ons-icon>
+
+                        <ons-icon ng-show="documento.estado != 'No Presento' && documento.estado != 'Vencido'" icon="fa-check-circle" size="40px" style="color: #00bb00"></ons-icon>
+                    </div>
+                    <div class="list-item-right">
+                        <div class="list-item-content">
+                            <div class="name">{{documento.nombre}}</div>
+
+                            <span class="desc"><b>Vencimiento:</b> {{documento.vencimiento==''?'No Aplica':documento.vencimiento}}</span>
+                            <br>
+                            <span class="desc"><b>Estado:</b> {{documento.estado}}</span>
+                        </div>
+                    </div>
+                </ons-list-item>
+            </ons-list>
+        </div>
+        <module-loading-spinner ng-show="loading && !connectionFail"></module-loading-spinner>
+        <module-sin-conexion ng-show="connectionFail"></module-sin-conexion>
+    </ons-page>
+</ons-navigator>
