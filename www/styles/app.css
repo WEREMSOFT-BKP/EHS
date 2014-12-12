@@ -256,5 +256,6 @@ input[type=text], input[type=email], input[type=password] {
     height: 17px;
     color: #0096df;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 50%;
 }
+
