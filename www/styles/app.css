@@ -226,6 +226,7 @@ input[type=text], input[type=email], input[type=password] {
 .toolbar_ehs_left {
     float: left;
     text-align: left;
+    margin-left: -5px;
 }
 .toolbar_ehs_right {
     margin-top: -8px;
