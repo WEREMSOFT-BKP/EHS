@@ -1,15 +1,16 @@
 <ons-toolbar>
     <div class="center">
         <div class="toolbar_ehs_left">
-            <ons-toolbar-button class="bars-in-logo ehs-button-align" ng-click="menu.toggleMenu()" ng-shjhow="ons.navigator.getPages().length <= 1">
+            <ons-toolbar-button class="bars-in-logo ehs-button-align" ng-click="menu.toggleMenu()" ng-show="ons.navigator.getPages().length <= 1 || !userData.logedIn">
                 <ons-icon icon="bars"></ons-icon>
-
             </ons-toolbar-button>
+            <ons-back-button ng-hide="ons.navigator.getPages().length <= 1 || !userData.logedIn">
+            </ons-back-button>
             <img height="40px" class="logo-image" src="imgs/header_logo.png">
         </div>
         <div class="toolbar_ehs_right">
             <div class="ehs-header-text">Control de contratistas</div>
-            <div class="ehs-header-username">{{userData.profileData.nombre}}</div>
+            <div class="ehs-header-username">{{userData.logedIn?userData.profileData.nombre:''}}</div>
         </div>
     </div>
 </ons-toolbar>
