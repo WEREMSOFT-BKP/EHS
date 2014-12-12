@@ -231,7 +231,7 @@ input[type=text], input[type=email], input[type=password] {
     margin-top: -8px;
     float: right;
     text-align: left;
-    margin-right: 20px;
+    margin-right: 5px;
 }
 .ehs-button-align {
     vertical-align: 100%;
@@ -246,6 +246,7 @@ input[type=text], input[type=email], input[type=password] {
     float: left;
     height: 17px;
     font-weight: bold;
+    font-size: 12px;
 }
 .ehs-header-username {
     text-align: right;
@@ -254,4 +255,5 @@ input[type=text], input[type=email], input[type=password] {
     height: 17px;
     color: #0096df;
     font-weight: bold;
+    font-size: 12px;
 }
