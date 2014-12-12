@@ -39,7 +39,7 @@
 
 
          <ons-list-header>Documentación del empleado</ons-list-header>
-            <ons-list-item ng-repeat="documento in documentacionEmpleado" modifier="chevron" class="list-item-container">
+            <ons-list-item ng-repeat="documento in documentacionEmpleado" class="list-item-container list-item-container-ehs">
                 <div class="list-item-left">
                     <ons-icon ng-show="documento.estado == 'Vencido'" icon="fa-clock-o" size="40px" style="color: #cc0000"></ons-icon>
                     <ons-icon ng-show="documento.estado == 'No presento'" icon="fa-minus-circle" size="40px" style="color: #cc0000"></ons-icon>

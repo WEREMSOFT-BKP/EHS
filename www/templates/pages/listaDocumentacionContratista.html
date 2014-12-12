@@ -4,12 +4,12 @@
     <div style="text-align: center" class="content-padded" ng-hide="loading">
 
         <ons-list>
-            <ons-list-item ng-repeat="documento in documentacionContratista" modifier="chevron" class="list-item-container">
+            <ons-list-item ng-repeat="documento in documentacionContratista" class="list-item-container">
                 <div class="list-item-left">
-                    <ons-icon ng-show="documento.estado == 'Vencido'" icon="fa-clock-o" size="40px" style="color: #cc0000"></ons-icon>
-                    <ons-icon ng-show="documento.estado == 'No Presento'" icon="fa-minus-circle" size="40px" style="color: #cc0000"></ons-icon>
+                    <ons-icon ng-show="documento.estado == 'Vencido'" icon="fa-clock-o" size="40px" style="color: #cc0000;padding-top: 6px;"></ons-icon>
+                    <ons-icon ng-show="documento.estado == 'No Presento'" icon="fa-minus-circle" size="40px" style="color: #cc0000;padding-top: 6px"></ons-icon>
 
-                    <ons-icon ng-show="documento.estado != 'No Presento' && documento.estado != 'Vencido'" icon="fa-check-circle" size="40px" style="color: #00bb00"></ons-icon>
+                    <ons-icon ng-show="documento.estado != 'No Presento' && documento.estado != 'Vencido'" icon="fa-check-circle" size="40px" style="color: #00bb00;padding-top: 6px"></ons-icon>
                 </div>
                 <div class="list-item-right">
                     <div class="list-item-content">

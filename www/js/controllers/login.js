@@ -28,8 +28,6 @@
             {
                 $scope.selectedLoginOption =  cloneObject($scope.loginOptions[0]);
             }
-
-
         }
 
         $scope.login = function() {
@@ -37,10 +35,11 @@
         };
 
         $scope.loginSuccess = function() {
-            $scope.menu.setMainPage('templates/TabBarBottom.html');
+            $scope.menu.setMainPage('templates/home.html');
+
         };
         $scope.loginError = function() {
-            alert('No funciono!');
+            ons.notification.alert({message: 'Ah ocurrido un error'});
         };
 
         $scope.logout = function() {

@@ -43,7 +43,7 @@
                     <b>subContratista : </b>{{userData.contratistaInfo.subcontratista}}
                 </ons-list-item>
                 <ons-list-header>Documentos</ons-list-header>
-                <ons-list-item ng-repeat="documento in documentacionContratista" modifier="chevron" class="list-item-container">
+                <ons-list-item ng-repeat="documento in documentacionContratista" class="list-item-container list-item-container-ehs">
                     <div class="list-item-left">
                         <ons-icon ng-show="documento.estado == 'Vencido'" icon="fa-clock-o" size="40px" style="color: #cc0000"></ons-icon>
                         <ons-icon ng-show="documento.estado == 'No Presento'" icon="fa-minus-circle" size="40px" style="color: #cc0000"></ons-icon>

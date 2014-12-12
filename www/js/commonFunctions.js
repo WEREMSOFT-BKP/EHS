@@ -8,20 +8,20 @@ function prompt(strMessage, fnctCallBaclFunction, strTitle, strButtonLabel) {
         fnctCallBaclFunction = messageDefaultCallBackFunction;
     }
 
-    if (isApp) {
-        if (!strTitle) {
-            strTitle = "Información";
-        }
-
-        if (!strButtonLabel) {
-            strButtonLabel = "Ok";
-        }
-        navigator.notification.alert(strMessage, fnctCallBaclFunction, strTitle, strButtonLabel);
-    } else {
-        alert(strMessage);
-        if (fnctCallBaclFunction)
-            fnctCallBaclFunction();
+    if (!strTitle) {
+        strTitle = "Información";
     }
+
+    if (!strButtonLabel) {
+        strButtonLabel = "Ok";
+    }
+    ons.notification.alert({
+        message: strTitle,
+        title: strMessage
+    });
+    //navigator.notification.alert(strMessage, fnctCallBaclFunction, strTitle, strButtonLabel);
+    if (fnctCallBaclFunction)
+        fnctCallBaclFunction();
 }
 
 function promptError(strMessage, fnctCallBaclFunction, strTitle, strButtonLabel) {
@@ -30,20 +30,18 @@ function promptError(strMessage, fnctCallBaclFunction, strTitle, strButtonLabel)
         fnctCallBaclFunction = messageDefaultCallBackFunction;
     }
 
-    if (isApp && navigator.notification != undefined) {
-        if (!strTitle) {
-            strTitle = "Error";
-        }
-
-        if (!strButtonLabel) {
-            strButtonLabel = "Ok";
-        }
-        navigator.notification.alert(strMessage, fnctCallBaclFunction, strTitle, strButtonLabel);
-    } else {
-
-        if (fnctCallBaclFunction)
-            fnctCallBaclFunction();
+    if (!strTitle) {
+        strTitle = "Error";
     }
+
+    if (!strButtonLabel) {
+        strButtonLabel = "Ok";
+    }
+
+    ons.notification.alert({
+        message: strTitle,
+        title: strMessage
+    });
     if (console.logError) {
         console.logError(strMessage);
     }

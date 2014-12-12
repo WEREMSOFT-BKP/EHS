@@ -258,4 +258,6 @@ input[type=text], input[type=email], input[type=password] {
     font-weight: bold;
     font-size: 50%;
 }
-
+.list-item-container-ehs {
+    height: 84px;
+}
