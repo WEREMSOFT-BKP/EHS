@@ -9,7 +9,7 @@
                 ons.notification.confirm({
                     buttonLabel: 'Sí',
                     title: 'Contacto',
-                    message: '¿Desea llamar a la sucursal?',
+                    message: '¿Desea llamar a soporte?',
                     callback: function(idx) {
                         switch (idx) {
                             case 0:
