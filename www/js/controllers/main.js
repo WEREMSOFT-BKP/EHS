@@ -12,6 +12,7 @@
         $scope.documentacionEmpleado = [];
         $scope.searchResult = [];
         $scope.searchType = '';
+        $scope.detallesVehiculo = [];
 
 
         $scope.init = function()
@@ -59,13 +60,14 @@
             $scope.searchResult = data;
         };
 
-        $scope.getDocumentacionVehiculo = function(pVehicleCode) {
+        $scope.getDocumentacionVehiculo = function(pVehicle) {
             $scope.loading = true;
+            $scope.detallesVehiculo = pVehicle;
             ons.navigator.pushPage('templates/pages/listaDocumentacionVehiculo.html');
             $scope.isWorking = true;
             var request = $http({
                 method: "get",
-                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=documentacionVehiculo&codigoVehiculo=' + pVehicleCode,
+                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=documentacionVehiculo&codigoVehiculo=' + pVehicle.codigo,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },

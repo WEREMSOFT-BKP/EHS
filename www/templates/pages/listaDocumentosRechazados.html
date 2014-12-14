@@ -4,13 +4,14 @@
         <!-- Solo se muestra si es una categoría -->
         <div style="text-align: center" class="content-padded" ng-hide="loading">
 
-            <ons-list>
+            <ons-list modifier="inset">
+                <ons-list-header>Listado de Documentos Rechazados</ons-list-header>
                 <ons-list-item ng-repeat="documento in searchResult" class="list-item-container list-item-container-ehs">
                     <div class="list-item-left">
 
                         <ons-icon icon="fa-times-circle" size="40px" style="color: #cc0000"></ons-icon>
 
-                       
+
                     </div>
                     <div class="list-item-right">
                         <div class="list-item-content">

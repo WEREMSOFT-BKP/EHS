@@ -3,7 +3,7 @@
     <!-- Solo se muestra si es una categoría -->
     <div style="text-align: center" class="content-padded" ng-hide="loading">
 
-        <ons-list>
+        <ons-list modifier="inset">
             <ons-list-item ng-repeat="documento in documentacionVehiculo" class="list-item-container list-item-container-ehs">
                 <div class="list-item-left">
                     <ons-icon ng-show="documento.estado == 'Vencido'" icon="fa-clock-o" size="40px" style="color: #cc0000;padding-top: 6px"></ons-icon>
@@ -20,6 +20,17 @@
                         <span class="desc"><b>Estado:</b> {{documento.estado}}</span>
                     </div>
                 </div>
+            </ons-list-item>
+
+            <!-- patente": "FQI659",
+    "descripcion": "Auto Blanco", -->
+             <ons-list-header>Datos del Vehículo</ons-list-header>
+            <ons-list-item class="list-item-container">
+                <b>Patente : </b>{{detallesVehiculo.patente}}
+            </ons-list-item>
+
+            <ons-list-item class="list-item-container">
+                <b>Descripción : </b>{{detallesEmpleado.descripcion}}
             </ons-list-item>
         </ons-list>
     </div>
