@@ -263,8 +263,8 @@ input[type=text], input[type=email], input[type=password] {
     height: 84px;
 }
 .name-ehs-title {
-    font-size: 50px;
-    font-size: 6.1vw;
+    font-size: 25px;
+    /*font-size: 6.1vw;*/
     text-transform: capitalize;
     margin-top: 13px;
 }

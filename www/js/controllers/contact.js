@@ -22,7 +22,8 @@
                     }
                 });
             } catch (e) {
-                alert(e);
+                console.log(e);
+                //alert(e);
             }
         }
 
@@ -36,8 +37,8 @@
             phonedialer.dial(
                 "01148335900",
                 function(err) {
-                    if (err == "empty") alert("Unknown phone number");
-                    else alert("Dialer Error:" + err);
+                    if (err == "empty") console.log("Unknown phone number");
+                    else console.log("Dialer Error:" + err);
                 },
                 function(success) {
                     //alert('Dialing succeeded');

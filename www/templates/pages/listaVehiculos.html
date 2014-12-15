@@ -4,6 +4,8 @@
         <!-- Solo se muestra si es una categoría -->
         <div style="text-align: center" class="content-padded" ng-hide="loading">
             <div ng-include="'templates/modules/listaSearchResultVehiculos.html'"></div>
+            <br>
+            <ons-button modifier="large" ng-click="ons.navigator.popPage()">volver</ons-button>
         </div>
         <module-loading-spinner ng-show="loading && !connectionFail"></module-loading-spinner>
         <module-sin-conexion ng-show="connectionFail"></module-sin-conexion>

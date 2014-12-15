@@ -85,7 +85,6 @@
             $scope.isWorking = false;
             $scope.loading = false;
             $scope.documentacionVehiculo = data;
-            console.log(data);
         };
 
         $scope.getDetallesEmpleado = function(pEmpleadoCodigo) {
@@ -127,14 +126,12 @@
             $scope.isWorking = false;
             $scope.loading = false;
             $scope.documentacionEmpleado = data;
-            console.log(data);
         };
 
         $scope.httpDetallesEmpleadoSuccess = function(data, status, headers, config) {
             $scope.isWorking = false;
             $scope.loading = false;
             $scope.detallesEmpleado = data;
-            console.log(data);
         };
 
 
@@ -165,7 +162,6 @@
             $scope.isWorking = false;
             $scope.loading = false;
             $scope.documentacionContratista = data;
-            console.log(data);
         };
 
 
@@ -195,7 +191,6 @@
             $scope.isWorking = false;
             $scope.loading = false;
             $scope.searchResult = data;
-            console.log(data);
         }
 
 
@@ -224,7 +219,6 @@
             $scope.isWorking = false;
             $scope.loading = false;
             $scope.searchResult = data;
-            console.log(data);
         }
 
         $scope.httpError = function(data, status, headers, config) {
@@ -257,7 +251,6 @@
             $scope.isWorking = false;
             $scope.loading = false;
             $scope.searchResult = data;
-            console.log(data);
         }
 
         $scope.getDetallesContratista = function(pContratistaCode) {
