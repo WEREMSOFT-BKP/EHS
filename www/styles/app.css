@@ -22,7 +22,7 @@
 input[type=text], input[type=email], input[type=password] {
     display: block;
     width: 100%;
-    height: 29px;
+    height: 42px;
     margin: 0 auto;
     font-size: 19px;
     outline: none;
@@ -257,14 +257,16 @@ input[type=text], input[type=email], input[type=password] {
     color: #0096df;
     font-weight: bold;
     font-size: 50%;
+    font-size: 2.5vw;
 }
 .list-item-container-ehs {
     height: 84px;
 }
 .name-ehs-title {
     font-size: 50px;
+    font-size: 6.1vw;
     text-transform: capitalize;
-    margin-top: 10px;
+    margin-top: 13px;
 }
 .list--inset--ehs {
     margin-left: 8px;

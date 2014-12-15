@@ -4,7 +4,7 @@
     <div style="text-align: center" class="content-padded" ng-hide="loading">
 
         <ons-list>
-            <ons-list-item ng-repeat="documento in documentacionContratista" class="list-item-container">
+            <ons-list-item ng-repeat="documento in documentacionContratista" class="list-item-container list-item-container-ehs">
                 <div class="list-item-left">
                     <ons-icon ng-show="documento.estado == 'Vencido'" icon="fa-clock-o" size="40px" style="color: #cc0000;padding-top: 6px;"></ons-icon>
                     <ons-icon ng-show="documento.estado == 'No Presento'" icon="fa-minus-circle" size="40px" style="color: #cc0000;padding-top: 6px"></ons-icon>
