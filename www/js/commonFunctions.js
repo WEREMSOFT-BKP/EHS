@@ -4,9 +4,6 @@ var raiseDebugErrors = false;
 
 function messageWindow(strMessage, fnctCallBaclFunction, strTitle, strButtonLabel) {
 
-    alert(typeof strMessage);
-
-    alert("caller is " + arguments.callee.caller.toString());
 
     if (!fnctCallBaclFunction) {
         fnctCallBaclFunction = messageDefaultCallBackFunction;
