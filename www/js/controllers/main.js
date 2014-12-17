@@ -35,6 +35,11 @@
             }
             //--- Search
         $scope.search = function(pTipo, pSearchString) {
+            if(pSearchString == '' || pSearchString == undefined)
+            {
+                prompt("Debe ingresar un texto para la busqueda");
+                return;
+            }
             $scope.loading = true;
             $scope.searchType = pTipo;
             ons.navigator.pushPage('templates/pages/listaSearchResult.html');

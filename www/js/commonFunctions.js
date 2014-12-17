@@ -16,8 +16,8 @@ function prompt(strMessage, fnctCallBaclFunction, strTitle, strButtonLabel) {
         strButtonLabel = "Ok";
     }
     ons.notification.alert({
-        message: strTitle,
-        title: strMessage
+        message: strMessage,
+        title: strTitle
     });
     //navigator.notification.alert(strMessage, fnctCallBaclFunction, strTitle, strButtonLabel);
     if (fnctCallBaclFunction)
@@ -30,17 +30,15 @@ function promptError(strMessage, fnctCallBaclFunction, strTitle, strButtonLabel)
         fnctCallBaclFunction = messageDefaultCallBackFunction;
     }
 
-    if (!strTitle) {
-        strTitle = "Error";
-    }
+    strTitle = "Error";
 
     if (!strButtonLabel) {
         strButtonLabel = "Ok";
     }
 
     ons.notification.alert({
-        message: strTitle,
-        title: strMessage
+        message: strMessage,
+        title: strTitle
     });
     if (console.logError) {
         console.logError(strMessage);
