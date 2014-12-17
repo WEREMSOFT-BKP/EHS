@@ -33,7 +33,7 @@
 
         returnValue.httpError = function(data, status, headers, config) {
             returnValue.isWorking = false;
-            promptError("Oops! Algo ha salido mal. Reintenta en un momento");
+            messageWindowError("Oops! Algo ha salido mal. Reintenta en un momento");
             if (returnValue.callBackError) {
                 returnValue.callBackError();
                 returnValue.callBackError = null;
@@ -63,7 +63,7 @@
                     returnValue.callBackSuccess = null;
                 }
             } else if (data.ok == 0) {
-                prompt('Nombre de usuario o contraseña inválidas');
+                messageWindow('Nombre de usuario o contraseña inválidas');
                 //$scope.logout(false);
             }
         }

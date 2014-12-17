@@ -37,7 +37,7 @@
         $scope.search = function(pTipo, pSearchString) {
             if(pSearchString == '' || pSearchString == undefined)
             {
-                prompt("Debe ingresar un texto para la busqueda");
+                messageWindow("Debe ingresar un texto para la busqueda");
                 return;
             }
             $scope.loading = true;
