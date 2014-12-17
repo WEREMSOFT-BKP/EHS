@@ -287,3 +287,58 @@ input[type=text], input[type=email], input[type=password] {
     padding: 0px 12px;
     line-height: 34px;
 }
+/* Alert Col */
+
+.alert {
+    height: 200px;
+    width: 80%;
+    padding-left: 50px;
+    padding-right: 50px;
+    background: #fff;
+    overflow: hidden;
+    color: #999;
+}
+.alert-b-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.alert-b {
+    text-align: left;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.alert-b-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert-b-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+/*estilos de la slista de usuarios*/
+
+.user-list-title-name {
+    font-weight: bold;
+    line-height: 16px;
+    font-size: 15px;
+    margin-bottom: 6px;
+    text-transform: capitalize;
+}
+.user-list-sub-title-dni {
+    font-weight: bold;
+    line-height: 16px;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+.user-list-sub-title-nombre-contratista {
+    font-weight: bold;
+    line-height: 16px;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #00aa00;
+}

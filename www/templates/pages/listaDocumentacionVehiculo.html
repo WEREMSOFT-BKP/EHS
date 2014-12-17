@@ -2,7 +2,12 @@
     <module-header></module-header>
     <!-- Solo se muestra si es una categoría -->
     <div style="text-align: center" class="content-padded" ng-hide="loading">
-
+        <ons-row style="margin-top: 0px;">
+            <ons-col>
+                <h2 class="form-title">Documentos de</h2>
+                <h1 class="form-title" style="margin-top: 0px;">{{detallesVehiculo.patente}}</h1>
+            </ons-col>
+        </ons-row>
         <ons-list modifier="inset">
             <ons-list-item ng-repeat="documento in documentacionVehiculo" class="list-item-container list-item-container-ehs">
                 <div class="list-item-left">
@@ -24,7 +29,7 @@
 
             <!-- patente": "FQI659",
     "descripcion": "Auto Blanco", -->
-             <ons-list-header>Datos del Vehículo</ons-list-header>
+            <ons-list-header>Datos del Vehículo</ons-list-header>
             <ons-list-item class="list-item-container">
                 <b>Patente : </b>{{detallesVehiculo.patente}}
             </ons-list-item>
@@ -36,4 +41,5 @@
     </div>
     <module-loading-spinner ng-show="loading && !connectionFail"></module-loading-spinner>
     <module-sin-conexion ng-show="connectionFail"></module-sin-conexion>
+    <module-sin-resultados ng-show="!loading && !connectionFail && searchResult.length == 0"></module-sin-resultados>
 </ons-page>

@@ -9,5 +9,6 @@
         </div>
         <module-loading-spinner ng-show="loading && !connectionFail"></module-loading-spinner>
         <module-sin-conexion ng-show="connectionFail"></module-sin-conexion>
+        <module-sin-resultados ng-show="!loading && !connectionFail && searchResult.length == 0"></module-sin-resultados>
     </ons-page>
 </ons-navigator>

@@ -283,6 +283,13 @@
 
     });
 
+    module.directive('moduleSinResultados', function() {
+        return {
+            restrict: 'E',
+            templateUrl: 'templates/modules/sinResultados.html'
+        };
+    });
+
     module.directive('moduleSinConexion', function() {
         return {
             restrict: 'E',
