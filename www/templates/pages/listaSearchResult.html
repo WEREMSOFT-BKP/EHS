@@ -2,7 +2,7 @@
     <module-header></module-header>
     <!-- Solo se muestra si es una categoría -->
 
-    <div style="text-align: center" class="content-padded" ng-hide="loading">
+    <div style="text-align: center" class="content-padded" ng-hide="loading || connectionFail">
         <ons-row style="margin-top: 5px;">
             <ons-col>
                 <h1 class="form-title">{{searchType}}</h1>

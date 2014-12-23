@@ -7,7 +7,7 @@
     </div>
 
     <!-- Solo se muestra si es una categoría -->
-    <div style="text-align: center" class="content-padded" ng-hide="loading">
+    <div style="text-align: center" class="content-padded" ng-hide="loading || connectionFail">
         <br>
         <ons-button modifier="large" ng-click="ons.navigator.popPage()">volver</ons-button>
         <ons-list modifier="inset" style="margin-top: 10px">

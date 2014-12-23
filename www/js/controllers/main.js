@@ -14,6 +14,7 @@
         $scope.searchType = '';
         $scope.detallesVehiculo = [];
         $scope.contratista = {};
+        $scope.connectionFail = false;
 
 
         $scope.init = function()
@@ -312,6 +313,14 @@
             $scope.isWorking = false;
             $scope.loading = false;
             $scope.contratista.info = data;
+        }
+
+        $scope.retryConnection = function()
+        {
+            $scope.isWorking = false;
+            $scope.loading = false;
+            $scope.connectionFail = false;
+            menu.setMainPage('templates/home.html');
         }
 
     });
