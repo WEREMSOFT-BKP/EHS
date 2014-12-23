@@ -3,7 +3,11 @@
         <module-header></module-header>
         <!-- Solo se muestra si es una categoría -->
         <div style="text-align: center" class="content-padded" ng-hide="loading || connectionFail">
-
+            <ons-row style="margin-top: 5px;">
+                <ons-col>
+                    <h1 class="form-title">Documentos Rechazados</h1>
+                </ons-col>
+            </ons-row>
             <ons-list modifier="inset">
                 <ons-list-header>Listado de Documentos Rechazados</ons-list-header>
                 <ons-list-item ng-repeat="documento in searchResult" class="list-item-container list-item-container-ehs">
