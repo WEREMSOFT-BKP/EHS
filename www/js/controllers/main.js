@@ -13,6 +13,7 @@
         $scope.searchResult = [];
         $scope.searchType = '';
         $scope.detallesVehiculo = [];
+        $scope.contratista = {};
 
 
         $scope.init = function()
@@ -141,6 +142,7 @@
 
 
         $scope.getDocumentacionContratista = function(pContratistaCode, pDontRedirect) {
+            $scope.contratista.codigo = pContratistaCode;
             $scope.loading = true;
             if(!pDontRedirect)
             {
@@ -284,6 +286,32 @@
             $scope.userData.contratistaInfo = data;
             $scope.searchResult = data;
             $scope.getDocumentacionContratista($scope.userData.profileData.codigo, true);
+        }
+
+        $scope.getDetallesContratistaAsEmpresa = function(pContratistaCode) {
+            //http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=571&parametro=
+            $scope.loading = true;
+            $scope.isWorking = true;
+            var request = $http({
+                method: "get",
+                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=contratistaDetalle&codigo=' + pContratistaCode,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                data: ''
+            });
+
+            // Store the data-dump of the FORM scope.
+            request.success($scope.httpDetallesContratistaAsEmpresaSuccess);
+
+            // Store the data-dump of the FORM scope.
+            request.error($scope.httpError);
+        }
+
+        $scope.httpDetallesContratistaAsEmpresaSuccess = function(data, status, headers, config) {
+            $scope.isWorking = false;
+            $scope.loading = false;
+            $scope.contratista.info = data;
         }
 
     });

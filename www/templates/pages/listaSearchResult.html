@@ -1,12 +1,22 @@
 <ons-page class="center">
     <module-header></module-header>
     <!-- Solo se muestra si es una categoría -->
-    <module-sin-resultados ng-show="!loading && !connectionFail && searchResult.length == 0"></module-sin-resultados>
-    <module-loading-spinner ng-show="loading && !connectionFail"></module-loading-spinner>
-    <module-sin-conexion ng-show="connectionFail"></module-sin-conexion>
+
     <div style="text-align: center" class="content-padded" ng-hide="loading">
-    <div ng-include="searchType=='vehiculos'?'templates/modules/listaSearchResultVehiculos.html':searchType == 'empleados'?'templates/modules/listaSearchResultPersonal.html':'templates/modules/listaSearchResultContratistas.html'"></div>
-        <br> 
+        <ons-row style="margin-top: 5px;">
+            <ons-col>
+                <h1 class="form-title">{{searchType}}</h1>
+            </ons-col>
+        </ons-row>
+        <ons-row style="margin-top: 5px;">
+            <ons-col>
+                <module-sin-resultados ng-show="!loading && !connectionFail && searchResult.length == 0"></module-sin-resultados>
+                <module-loading-spinner ng-show="loading && !connectionFail"></module-loading-spinner>
+                <module-sin-conexion ng-show="connectionFail"></module-sin-conexion>
+            </ons-col>
+        </ons-row>
+        <div ng-if="searchResult.length != 0" ng-include="searchType=='vehiculos'?'templates/modules/listaSearchResultVehiculos.html':searchType == 'empleados'?'templates/modules/listaSearchResultPersonal.html':'templates/modules/listaSearchResultContratistas.html'"></div>
+        <br>
         <ons-button modifier="large" ng-click="ons.navigator.popPage()">volver</ons-button>
     </div>
 </ons-page>

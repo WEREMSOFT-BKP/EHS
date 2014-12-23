@@ -242,6 +242,7 @@ input[type=text], input[type=email], input[type=password] {
     padding-top: 2px;
 }
 .ehs-header-text {
+    margin-top: 8px;
     text-align: right;
     width: 100%;
     float: left;
@@ -267,6 +268,7 @@ input[type=text], input[type=email], input[type=password] {
     font-size: 6.1vw;
     text-transform: capitalize;
     margin-top: 13px;
+    line-height: 21px;
 }
 .list--inset--ehs {
     margin-left: 8px;
@@ -282,6 +284,7 @@ input[type=text], input[type=email], input[type=password] {
     font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
     text-align: center;
     color: rgba(24, 103, 194, 0.81);
+    text-transform: capitalize;
 }
 .button--large {
     padding: 0px 12px;

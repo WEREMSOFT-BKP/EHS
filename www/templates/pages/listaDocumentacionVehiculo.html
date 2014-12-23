@@ -1,18 +1,20 @@
 <ons-page class="center">
     <module-header></module-header>
+    <div class="profile-card">
+        <img src="{{detallesEmpleado.foto}}" class="profile-image">
+        <div class="profile-name">{{detallesVehiculo.patente}}</div>
+        <div class="profile-desc"></div>
+    </div>
     <!-- Solo se muestra si es una categoría -->
     <div style="text-align: center" class="content-padded" ng-hide="loading">
-        <ons-row style="margin-top: 0px;">
-            <ons-col>
-                <h2 class="form-title">Documentos de</h2>
-                <h1 class="form-title" style="margin-top: 0px;">{{detallesVehiculo.patente}}</h1>
-            </ons-col>
-        </ons-row>
-        <ons-list modifier="inset">
+        <br>
+        <ons-button modifier="large" ng-click="ons.navigator.popPage()">volver</ons-button>
+        <ons-list modifier="inset" style="margin-top: 10px">
+            <ons-list-header>Documentos del Vehículo</ons-list-header>
             <ons-list-item ng-repeat="documento in documentacionVehiculo" class="list-item-container list-item-container-ehs">
                 <div class="list-item-left">
-                    <ons-icon ng-show="documento.estado == 'Vencido'" icon="fa-clock-o" size="40px" style="color: #cc0000;padding-top: 6px"></ons-icon>
-                    <ons-icon ng-show="documento.estado == 'No presento'" icon="fa-times-circle" size="40px" style="color: #cc0000;padding-top: 6px;"></ons-icon>
+
+                    <ons-icon ng-hide="documento.estado != 'No presento' && documento.estado != 'Vencido'" icon="fa-times-circle" size="40px" style="color: #cc0000;padding-top: 6px;"></ons-icon>
 
                     <ons-icon ng-show="documento.estado != 'No presento' && documento.estado != 'Vencido'" icon="fa-check-circle" size="40px" style="color: #00bb00;padding-top: 6px"></ons-icon>
                 </div>
