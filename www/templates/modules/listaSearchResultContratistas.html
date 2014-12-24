@@ -1,4 +1,5 @@
 <ons-list modifier="inset">
+     <ons-list-header>Listado de Contratistas</ons-list-header>
     <ons-list-item ng-repeat="contratista in searchResult" modifier="chevron" class="list-item-container" ng-click="getDocumentacionContratista(contratista.codigo)">
         <div class="list-item-left">
             <ons-icon ng-show="contratista.estado == 0" icon="fa-times-circle" size="40px" style="color: #cc0000"></ons-icon>

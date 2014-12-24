@@ -3,11 +3,6 @@
         <module-header></module-header>
         <!-- Solo se muestra si es una categoría -->
         <div style="text-align: center" class="content-padded" ng-hide="loading || connectionFail">
-            <ons-row style="margin-top: 5px;">
-                <ons-col>
-                    <h1 class="form-title">Vehículos</h1>
-                </ons-col>
-            </ons-row>
             <div ng-include="'templates/modules/listaSearchResultVehiculos.html'"></div>
             <br>
             <ons-button modifier="large" ng-hide="userData.profileData.tipo == 1" ng-click="ons.navigator.popPage()">volver</ons-button>
