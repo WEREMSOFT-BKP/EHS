@@ -346,7 +346,12 @@ input[type=text], input[type=email], input[type=password] {
     color: #00aa00;
 }
 
-.clear
+.profile-card-vehicle
 {
-    clear: both;
+    height: 84px;
+}
+
+.profile-card-vehicle .profile-name
+{
+    font-size: 34px;
 }
