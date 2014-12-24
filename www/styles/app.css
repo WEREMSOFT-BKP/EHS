@@ -345,3 +345,8 @@ input[type=text], input[type=email], input[type=password] {
     margin-bottom: 6px;
     color: #00aa00;
 }
+
+.clear
+{
+    clear: both;
+}
