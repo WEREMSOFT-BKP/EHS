@@ -48,7 +48,7 @@
             $scope.isWorking = true;
             var request = $http({
                 method: "get",
-                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=' + $scope.searchType + '&parametro=' + pSearchString + '&cliente=' + $scope.userData.profileData.codigo,
+                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=' + $scope.searchType + '&parametro=' + pSearchString + '&cliente=' + $scope.userData.profileData.codigo + '&desde=0&cantidad=1000',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
@@ -181,7 +181,7 @@
             $scope.isWorking = true;
             var request = $http({
                 method: "get",
-                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=' + pContratistaCode + '&parametro=',
+                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=' + pContratistaCode + '&parametro=&desde=0&cantidad=1000',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
