@@ -67,6 +67,69 @@
             $scope.searchResult = data;
         };
 
+
+        /*
+            $scope.search = function(strSearchString, pPage, pCount) {
+            $scope.searchString = strSearchString;
+            if (gaPlugin) {
+                gaPlugin.trackEvent(googleAnalyticsTrackEventSuccess, googleAnalyticsTrakEventError, "Application", "SearchString", strSearchString, 1);
+            }
+
+            if (pCount == null) {
+                pCount = 30;
+            }
+
+            if (pPage == null) {
+                pPage = 1;
+                $scope.lastPage = 1;
+            } else {
+                $scope.lastPage = pPage;
+            }
+
+            $scope.isWorking = true;
+            var request = $http({
+                method: "post",
+                url: 'http://www.nakaoutdoors.com.ar/webservices/search.json?max=' + pCount + '&offset=' + pPage + '&order=' + sortOptions.selectedSortOption,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+
+                data: '_method=POST&data[Busqueda][string]=' + strSearchString + '&',
+            });
+
+
+            // Store the data-dump of the FORM scope.
+            request.success($scope.httpSuccess);
+
+
+            // Store the data-dump of the FORM scope.
+            request.error($scope.httpError);
+
+            if (ons.navigator.getCurrentPage().name != "templates/forms/FormSearch.html") {
+                ons.navigator.pushPage("templates/forms/FormSearch.html");
+            }
+
+        }
+
+        $scope.httpError = function(data, status, headers, config) {
+            $scope.connectionFail = true;
+        }
+
+        $scope.httpSuccess = function(data, status, headers, config) {
+            $scope.connectionFail = false;
+            if ($scope.lastPage > 1) {
+                $scope.products = $.merge($scope.products, data.result.child_products);
+            } else {
+                $scope.products = data.result.child_products;
+            }
+
+            $scope.isWorking = false;
+            $scope.searchTotal = data.result.count;
+        }
+        */
+
+
+
         $scope.getDocumentacionVehiculo = function(pVehicle) {
             $scope.loading = true;
             $scope.detallesVehiculo = pVehicle;
