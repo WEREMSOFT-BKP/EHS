@@ -15,19 +15,16 @@
         $scope.detallesVehiculo = [];
         $scope.contratista = {};
         $scope.connectionFail = false;
+        $scope.noMoreResults = false;
 
 
-        $scope.init = function()
-        {
-            if(userData.logedIn && userData.profileData.tipo == 2)
-            {
+        $scope.init = function() {
+            if (userData.logedIn && userData.profileData.tipo == 2) {
                 $scope.menu.setMainPage('templates/TabBarBottom.html');
-            }else if(userData.logedIn && userData.profileData.tipo == 1)
-            {
+            } else if (userData.logedIn && userData.profileData.tipo == 1) {
                 $scope.menu.setMainPage('templates/forms/clienteSearch.html');
-            }else
-            {
-                 $scope.menu.setMainPage('templates/forms/login.html');
+            } else {
+                $scope.menu.setMainPage('templates/forms/login.html');
             }
         }
 
@@ -37,8 +34,7 @@
             }
             //--- Search
         $scope.search = function(pTipo, pSearchString) {
-            if(pSearchString == '' || pSearchString == undefined)
-            {
+            if (pSearchString == '' || pSearchString == undefined) {
                 messageWindow("Debe ingresar un texto para la busqueda");
                 return;
             }
@@ -68,65 +64,7 @@
         };
 
 
-        /*
-            $scope.search = function(strSearchString, pPage, pCount) {
-            $scope.searchString = strSearchString;
-            if (gaPlugin) {
-                gaPlugin.trackEvent(googleAnalyticsTrackEventSuccess, googleAnalyticsTrakEventError, "Application", "SearchString", strSearchString, 1);
-            }
 
-            if (pCount == null) {
-                pCount = 30;
-            }
-
-            if (pPage == null) {
-                pPage = 1;
-                $scope.lastPage = 1;
-            } else {
-                $scope.lastPage = pPage;
-            }
-
-            $scope.isWorking = true;
-            var request = $http({
-                method: "post",
-                url: 'http://www.nakaoutdoors.com.ar/webservices/search.json?max=' + pCount + '&offset=' + pPage + '&order=' + sortOptions.selectedSortOption,
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-
-                data: '_method=POST&data[Busqueda][string]=' + strSearchString + '&',
-            });
-
-
-            // Store the data-dump of the FORM scope.
-            request.success($scope.httpSuccess);
-
-
-            // Store the data-dump of the FORM scope.
-            request.error($scope.httpError);
-
-            if (ons.navigator.getCurrentPage().name != "templates/forms/FormSearch.html") {
-                ons.navigator.pushPage("templates/forms/FormSearch.html");
-            }
-
-        }
-
-        $scope.httpError = function(data, status, headers, config) {
-            $scope.connectionFail = true;
-        }
-
-        $scope.httpSuccess = function(data, status, headers, config) {
-            $scope.connectionFail = false;
-            if ($scope.lastPage > 1) {
-                $scope.products = $.merge($scope.products, data.result.child_products);
-            } else {
-                $scope.products = data.result.child_products;
-            }
-
-            $scope.isWorking = false;
-            $scope.searchTotal = data.result.count;
-        }
-        */
 
 
 
@@ -208,8 +146,7 @@
         $scope.getDocumentacionContratista = function(pContratistaCode, pDontRedirect) {
             $scope.contratista.codigo = pContratistaCode;
             $scope.loading = true;
-            if(!pDontRedirect)
-            {
+            if (!pDontRedirect) {
                 ons.navigator.pushPage('templates/pages/listaDocumentacionContratista.html');
             }
             $scope.isWorking = true;
@@ -238,13 +175,27 @@
 
 
 
-        $scope.getEmpleados = function(pContratistaCode) {
+        $scope.getEmpleados = function(pContratistaCode, pPage, pCount) {
             //http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=571&parametro=
             $scope.loading = true;
             $scope.isWorking = true;
+
+            if (pCount == null) {
+                pCount = 30;
+                $scope.noMoreResults = false;
+            }
+
+            if (pPage == null) {
+                pPage = 0;
+                $scope.lastPage = 0;
+            } else {
+                $scope.lastPage = pPage;
+            }
+
+
             var request = $http({
                 method: "get",
-                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=' + pContratistaCode + '&parametro=&desde=0&cantidad=1000',
+                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=' + pContratistaCode + '&parametro=&desde=' + (pPage  * pCount) + '&cantidad=' + pCount,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
@@ -261,10 +212,18 @@
         $scope.httpGetEmpleadosSuccess = function(data, status, headers, config) {
             $scope.isWorking = false;
             $scope.loading = false;
-            $scope.searchResult = data;
+
+            if(data.length == 0)
+            {
+                $scope.noMoreResults = true;
+            }
+
+            if ($scope.lastPage > 0) {
+                $scope.searchResult = $.merge($scope.searchResult, data);
+            } else {
+                $scope.searchResult = data;
+            }
         }
-
-
 
         $scope.getVehiculos = function(pContratistaCode) {
             //http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=571&parametro=
@@ -378,8 +337,7 @@
             $scope.contratista.info = data;
         }
 
-        $scope.retryConnection = function()
-        {
+        $scope.retryConnection = function() {
             $scope.isWorking = false;
             $scope.loading = false;
             $scope.connectionFail = false;
