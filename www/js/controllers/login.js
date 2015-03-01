@@ -40,6 +40,7 @@
         };
         $scope.loginError = function() {
             ons.notification.alert({message: 'Ah ocurrido un error'});
+            $scope.isWorking = false;
         };
 
         $scope.logout = function() {
