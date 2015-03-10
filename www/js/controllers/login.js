@@ -9,15 +9,13 @@
         $scope.isWorking = false;
         $scope.editMode = false;
         $scope.selectedLoginOption = {};
-        $scope.loginOptions = [{
-            text: '--Seleccione una opción--',
-            value: 0
-        },{
-            text: 'Contratista',
-            value: 1
+        $scope.loginOptions = [
+        {
+            name: 'Contratista',
+            id: 1
         }, {
-            text: 'Empresa',
-            value: 2
+            name: 'Empresa',
+            id: 2
         }];
 
         $scope.init = function() {
@@ -47,7 +45,7 @@
             $scope.userData.logout();
         };
         $scope.selectCallback = function(pObject) {
-            $scope.userData.profileData.tipo = pObject.value;
+            $scope.userData.profileData.tipo = pObject.id;
             console.log(pObject);
         }
 

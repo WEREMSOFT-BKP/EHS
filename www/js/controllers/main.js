@@ -17,6 +17,54 @@
         $scope.connectionFail = false;
         $scope.noMoreResults = false;
 
+        //--Esto es para los selects
+        $scope.genericSelect = {};
+        $scope.genericSelect.options = [];
+        $scope.genericSelect.returnVariable = null;
+        $scope.genericSelectLabel = 'Seleccióne una opción';
+
+        $scope.genericSelectStart = function(pSelectOptions, pReturnVariable, pReturnDescription, pLabelFieldName, pValueFieldName, pCallBackFunction, pChildScope, pSortCallback, pTemplateToUse) {
+            if (pSortCallback) {
+                pSelectOptions.sort(pSortCallback)
+            }
+
+            if (!pLabelFieldName) {
+                pLabelFieldName = 'label';
+            }
+            $scope.genericSelect.labelFieldName = pLabelFieldName;
+
+            if (!pValueFieldName) {
+                pValueFieldName = 'value';
+            }
+            $scope.genericSelect.valueFieldName = pValueFieldName;
+            $scope.genericSelect.callBackFunction = pCallBackFunction;
+            $scope.genericSelect.options = pSelectOptions;
+            $scope.genericSelect.returnVariable = pReturnVariable;
+            $scope.genericSelect.returnDescription = pReturnDescription;
+            $scope.genericSelect.childScope = pChildScope;
+            if (!pTemplateToUse) {
+                pTemplateToUse = 'templates/modules/combo/GenericSelectPage.html';
+            }
+            $scope.ons.navigator.pushPage(pTemplateToUse);
+        }
+
+        $scope.genericSelectOptionClick = function(pReturnVariable) {
+            /* $scope.genericSelect.returnVariable[$scope.genericSelect.labelFieldName] = pReturnVariable[$scope.genericSelect.labelFieldName];
+             $scope.genericSelect.returnVariable[$scope.genericSelect.valueFieldName] = pReturnVariable[$scope.genericSelect.valueFieldName];*/
+            console.log($scope['sortOptions.selectedSortOption']);
+            if ($scope.genericSelect.childScope) {
+                eval('$scope.genericSelect.childScope.' + $scope.genericSelect.returnDescription + ' = pReturnVariable[$scope.genericSelect.labelFieldName]');
+                eval('$scope.genericSelect.childScope.' + $scope.genericSelect.returnVariable + ' = pReturnVariable[$scope.genericSelect.valueFieldName]');
+            } else {
+                eval('$scope.' + $scope.genericSelect.returnVariable + ' = pReturnVariable[$scope.genericSelect.valueFieldName]');
+                eval('$scope.' + $scope.genericSelect.returnDescription + ' = pReturnVariable[$scope.genericSelect.labelFieldName]');
+            }
+            ons.navigator.popPage();
+            if ($scope.genericSelect.callBackFunction) {
+                $scope.genericSelect.callBackFunction(pReturnVariable);
+            }
+        }
+
 
         $scope.init = function() {
             if (userData.logedIn && userData.profileData.tipo == 2) {
@@ -195,7 +243,7 @@
 
             var request = $http({
                 method: "get",
-                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=' + pContratistaCode + '&parametro=&desde=' + (pPage  * pCount) + '&cantidad=' + pCount,
+                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=' + pContratistaCode + '&parametro=&desde=' + (pPage * pCount) + '&cantidad=' + pCount,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
@@ -213,8 +261,7 @@
             $scope.isWorking = false;
             $scope.loading = false;
 
-            if(data.length == 0)
-            {
+            if (data.length == 0) {
                 $scope.noMoreResults = true;
             }
 

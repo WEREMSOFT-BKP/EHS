@@ -1,39 +1,38 @@
 <ons-page ng-controller="LoginController" ng-init="init()">
-    <module-header></module-header>
-    <div class="content-padded">
-        <form ng-submit="login">
-            <ons-row style="margin-top: 0px;">
-                <ons-col>
-                    <h1 class="form-title">Iniciar Sesión</h1>
-                </ons-col>
-            </ons-row>
-            <ons-row style="margin-top: 0px;">
-                <ons-col>
-                    <label>Usuario o e-mail:</label>
-                    <input type="text" ng-model="userData.userName" class="text-input" placeholder="Usuario o e-mail" value="">
-                </ons-col>
-            </ons-row>
-            <ons-row style="margin-top: 10px;">
-                <ons-col>
-                    <label>Password:</label>
-                    <input type="password" ng-model="userData.password" class="text-input" placeholder="Password" value="">
-                </ons-col>
-            </ons-row>
-            <ons-row style="margin-top: 10px;">
-                <ons-col>
-                    <label>Tipo:</label>
-                    <div style="width:100%" dropdown-menu="loginOptions" dropdown-model="selectedLoginOption" dropdown-onchange="selectCallback(selected)">
-                        <ons-button modifier="outline" style="width:100%; text-align:left">{{selectedLoginOption.text}}&nbsp;&nbsp;&nbsp;
-                            <ons-icon icon="fa-caret-down" style="float: right;"></ons-icon>
-                        </ons-button>
-                    </div>
-                </ons-col>
-            </ons-row>
-            <ons-row style="margin-top: 20px;">
-                <ons-col>
-                    <ons-button modifier="large" should-spin="{{isWorking}}" ng-click="login()" type="submit">Ingresar</ons-button>
-                </ons-col>
-            </ons-row>
-        </form>
-    </div>
+    <ons-navigator>
+        <module-header></module-header>
+        <div class="content-padded">
+            <form ng-submit="login">
+                <ons-row style="margin-top: 0px;">
+                    <ons-col>
+                        <h1 class="form-title">Iniciar Sesión</h1>
+                    </ons-col>
+                </ons-row>
+                <ons-row style="margin-top: 0px;">
+                    <ons-col>
+                        <label>Usuario o e-mail:</label>
+                        <input type="text" ng-model="userData.userName" class="text-input" placeholder="Usuario o e-mail" value="">
+                    </ons-col>
+                </ons-row>
+                <ons-row style="margin-top: 10px;">
+                    <ons-col>
+                        <label>Password:</label>
+                        <input type="password" ng-model="userData.password" class="text-input" placeholder="Password" value="">
+                    </ons-col>
+                </ons-row>
+                <ons-row style="margin-top: 10px;">
+                    <ons-col>
+                        <label>Tipo:</label>
+                        <ons-button modifier="large--cta" ng-click="genericSelectStart(loginOptions, 'selectedLoginOption.id','selectedLoginOption.name', 'name', 'id', selectCallback, this)">
+                            <ons-icon icon="user"></ons-icon>&nbsp{{selectedLoginOption.id?selectedLoginOption.name:'-- Seleccionar destino de envío --'}}</ons-button>
+                    </ons-col>
+                </ons-row>
+                <ons-row style="margin-top: 20px;">
+                    <ons-col>
+                        <ons-button modifier="large" should-spin="{{isWorking}}" ng-click="login()" type="submit">Ingresar</ons-button>
+                    </ons-col>
+                </ons-row>
+            </form>
+        </div>
+    </ons-navigator>
 </ons-page>
