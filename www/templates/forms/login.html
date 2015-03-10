@@ -22,9 +22,9 @@
                 </ons-row>
                 <ons-row style="margin-top: 10px;">
                     <ons-col>
-                        <label>Tipo:</label>
+                        <label>Tipo de usuario:</label>
                         <ons-button modifier="large--cta" ng-click="genericSelectStart(loginOptions, 'selectedLoginOption.id','selectedLoginOption.name', 'name', 'id', selectCallback, this)">
-                            <ons-icon icon="user"></ons-icon>&nbsp{{selectedLoginOption.id?selectedLoginOption.name:'-- Seleccionar destino de envío --'}}</ons-button>
+                           {{selectedLoginOption.id?selectedLoginOption.name:'-- Seleccione tipo de usuario --'}}&nbsp;<ons-icon icon="caret-down"></ons-icon></ons-button>
                     </ons-col>
                 </ons-row>
                 <ons-row style="margin-top: 20px;">

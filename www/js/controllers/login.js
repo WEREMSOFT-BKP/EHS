@@ -19,13 +19,6 @@
         }];
 
         $scope.init = function() {
-            if($scope.userData.profileData.tipo)
-            {
-                $scope.selectedLoginOption =  cloneObject($scope.loginOptions[$scope.userData.profileData.tipo]);
-            }else
-            {
-                $scope.selectedLoginOption =  cloneObject($scope.loginOptions[0]);
-            }
         }
 
         $scope.login = function() {
