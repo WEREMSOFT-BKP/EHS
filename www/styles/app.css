@@ -261,7 +261,8 @@ input[type=text], input[type=email], input[type=password] {
     font-size: 2.5vw;
 }
 .list-item-container-ehs {
-    height: 84px;
+      min-height: 84px;
+  overflow: auto;
 }
 .name-ehs-title {
     font-size: 20px;
