@@ -106,6 +106,6 @@
         <string>1</string>
     </gap:config-file>
     <gap:config-file platform="android" parent="/manifest">
-        <uses-feature android:name="android.hardware.telephony" android:required="false" />
+        <uses-feature android:name="android.hardware.telephony" android:required="false"/>
     </gap:config-file>
 </widget>
