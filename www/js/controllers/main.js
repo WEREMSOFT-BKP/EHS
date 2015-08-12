@@ -92,7 +92,7 @@
             $scope.isWorking = true;
             var request = $http({
                 method: "get",
-                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=' + $scope.searchType + '&parametro=' + pSearchString + '&cliente=' + $scope.userData.profileData.codigo + '&desde=0&cantidad=1000',
+                url: 'http://www.ehslatam.com/controlcontratistas/ws/json.php?service=' + $scope.searchType + '&parametro=' + pSearchString + '&cliente=' + $scope.userData.profileData.codigo + '&desde=0&cantidad=1000',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
@@ -123,7 +123,7 @@
             $scope.isWorking = true;
             var request = $http({
                 method: "get",
-                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=documentacionVehiculo&codigoVehiculo=' + pVehicle.codigo,
+                url: 'http://www.ehslatam.com/controlcontratistas/ws/json.php?service=documentacionVehiculo&codigoVehiculo=' + pVehicle.codigo,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
@@ -149,7 +149,7 @@
             $scope.isWorking = true;
             var request = $http({
                 method: "get",
-                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=empleadoDetalle&codigoEmpleado=' + pEmpleadoCodigo,
+                url: 'http://www.ehslatam.com/controlcontratistas/ws/json.php?service=empleadoDetalle&codigoEmpleado=' + pEmpleadoCodigo,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
@@ -164,7 +164,7 @@
 
             var requestDocEmpleados = $http({
                 method: "get",
-                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=documentacionEmpleado&codigoEmpleado=' + pEmpleadoCodigo,
+                url: 'http://www.ehslatam.com/controlcontratistas/ws/json.php?service=documentacionEmpleado&codigoEmpleado=' + pEmpleadoCodigo,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
@@ -200,7 +200,7 @@
             $scope.isWorking = true;
             var request = $http({
                 method: "get",
-                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=documentacionContratista&codigo=' + pContratistaCode,
+                url: 'http://www.ehslatam.com/controlcontratistas/ws/json.php?service=documentacionContratista&codigo=' + pContratistaCode,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
@@ -224,7 +224,7 @@
 
 
         $scope.getEmpleados = function(pContratistaCode, pPage, pCount) {
-            //http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=571&parametro=
+            //http://www.ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=571&parametro=
             $scope.loading = true;
             $scope.isWorking = true;
 
@@ -243,7 +243,7 @@
 
             var request = $http({
                 method: "get",
-                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=' + pContratistaCode + '&parametro=&desde=' + (pPage * pCount) + '&cantidad=' + pCount,
+                url: 'http://www.ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=' + pContratistaCode + '&parametro=&desde=' + (pPage * pCount) + '&cantidad=' + pCount,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
@@ -273,12 +273,12 @@
         }
 
         $scope.getVehiculos = function(pContratistaCode) {
-            //http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=571&parametro=
+            //http://www.ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=571&parametro=
             $scope.loading = true;
             $scope.isWorking = true;
             var request = $http({
                 method: "get",
-                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=vehiculos&codigo=' + pContratistaCode + '&parametro=',
+                url: 'http://www.ehslatam.com/controlcontratistas/ws/json.php?service=vehiculos&codigo=' + pContratistaCode + '&parametro=',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
@@ -305,12 +305,12 @@
         };
 
         $scope.getDocumentosRechazados = function(pContratistaCode) {
-            //http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=571&parametro=
+            //http://www.ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=571&parametro=
             $scope.loading = true;
             $scope.isWorking = true;
             var request = $http({
                 method: "get",
-                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=documentosRechazados&codigo=' + pContratistaCode,
+                url: 'http://www.ehslatam.com/controlcontratistas/ws/json.php?service=documentosRechazados&codigo=' + pContratistaCode,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
@@ -331,12 +331,12 @@
         }
 
         $scope.getDetallesContratista = function(pContratistaCode) {
-            //http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=571&parametro=
+            //http://www.ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=571&parametro=
             $scope.loading = true;
             $scope.isWorking = true;
             var request = $http({
                 method: "get",
-                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=contratistaDetalle&codigo=' + pContratistaCode,
+                url: 'http://www.ehslatam.com/controlcontratistas/ws/json.php?service=contratistaDetalle&codigo=' + pContratistaCode,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
@@ -359,12 +359,12 @@
         }
 
         $scope.getDetallesContratistaAsEmpresa = function(pContratistaCode) {
-            //http://ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=571&parametro=
+            //http://www.ehslatam.com/controlcontratistas/ws/json.php?service=empleados&codigo=571&parametro=
             $scope.loading = true;
             $scope.isWorking = true;
             var request = $http({
                 method: "get",
-                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=contratistaDetalle&codigo=' + pContratistaCode,
+                url: 'http://www.ehslatam.com/controlcontratistas/ws/json.php?service=contratistaDetalle&codigo=' + pContratistaCode,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },

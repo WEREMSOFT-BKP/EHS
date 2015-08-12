@@ -9,6 +9,7 @@
         $scope.isWorking = false;
         $scope.editMode = false;
         $scope.selectedLoginOption = {};
+        this.scope = $scope;
         $scope.loginOptions = [
         {
             name: 'Contratista',

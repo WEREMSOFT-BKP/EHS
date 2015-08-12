@@ -83,12 +83,12 @@
             this.isWorking = true;
             var request = $http({
                 method: "get",
-                url: 'http://ehslatam.com/controlcontratistas/ws/json.php?service=login&tipo=' + this.profileData.tipo + '&usuario=' + this.userName + '&password=' + this.password,
+                url: 'http://www.ehslatam.com/controlcontratistas/ws/json.php?service=login&tipo=' + this.profileData.tipo + '&usuario=' + this.userName + '&password=' + this.password,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
 
-                data: '' //'_method=POST&data[Login][login]=' + $scope.userData.userName + '&data[Login][password]=' + $scope.userData.password + '&',
+                data: '' //'_method=POST&data[Login][login]=' + pScope.userData.userName + '&data[Login][password]=' + pScope.userData.password + '&',
             });
 
 
